@@ -312,6 +312,8 @@ func responseLogger(c *Client, res *Response) error {
 		}
 		debugLog += "==============================================================================\n"
 
+		res.SetRawProtocol(debugLog)
+
 		res.Request.log.Debugf("%s", debugLog)
 	}
 

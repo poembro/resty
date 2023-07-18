@@ -25,6 +25,18 @@ type Response struct {
 	body       []byte
 	size       int64
 	receivedAt time.Time
+
+	RawProtocolBody string
+}
+
+// SetRawProtocol method save the HTTP Protocol records.
+func (c *Response) SetRawProtocol(v string) {
+	c.RawProtocolBody = v
+}
+
+// GetRawProtocol method returns the HTTP Protocol records.
+func (c *Response) GetRawProtocol() string {
+	return c.RawProtocolBody
 }
 
 // Body method returns HTTP response as []byte array for the executed request.
